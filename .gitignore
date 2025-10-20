@@ -1,0 +1,27 @@
+# Custom domain: tjsasphaltandconcreterepair.com
+
+- Add a file named CNAME at the repository root containing exactly:
+    tjsasphaltandconcreterepair.com
+- In GitHub: Settings → Pages → set Custom domain to tjsasphaltandconcreterepair.com and enable Enforce HTTPS.
+- At your DNS provider, point the apex domain to GitHub Pages:
+    - A records: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+    - AAAA (optional): 2606:50c0:8000::153, ::154, ::155, ::156
+    - Optional www: CNAME www → Ureff3cts.github.io
+- Commit and push the CNAME file; certificate/HTTPS may take time to provision.This .gitignore is appropriate for repositories deployed to GitHub Pages and using
+# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+
+# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Additional Ruby/bundler ignore for when you run: bundle install
+/vendor
+
+# Specific ignore for GitHub Pages
+# GitHub Pages will always use its own deployed version of pages-gem 
+# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
+# counterproductive to check this file into the repository.
+# Details at https://github.com/github/pages-gem/issues/768
+Gemfile.lock
