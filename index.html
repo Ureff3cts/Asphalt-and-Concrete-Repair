@@ -950,37 +950,41 @@ p {
 
 
 <!-- Contact Section -->
-  <section id="contact">
-    <h1 class="text-large">Contact Us</h1>
-    <div class="contact-card">
-      <div class="business-info">
-        <h3 class="text-medium">TJ's Asphalt &amp; Concrete Repair</h3>
-        <p>Phone: (352) 830-7407</p>
-        <p>Email: tjasphaltandconcrete@outlook.com</p>
-        <p>Proudly Serving The Central Florida and Surrounding Areas</p>
-        <div class="contact-form">
-            <form id="contactForm" action="mailto:info@tjsasphalt.com" method="post" enctype="text/plain">
+<section id="contact">
+  <h1 class="text-large">Contact Us</h1>
+  <div class="contact-card">
+    <div class="business-info">
+      <h3 class="text-medium">TJ's Asphalt &amp; Concrete Repair</h3>
+      <p>Phone: (352) 830-7407</p>
+      <!-- Displayed email (what visitors see) -->
+      <p>Email: info@tjsasphaltandconcreterepair.com</p>
+      <p>Proudly Serving The Central Florida and Surrounding Areas</p>
+
+      <div class="contact-form">
+        <!-- Actual recipient (where the form sends) -->
+        <form id="contactForm" action="mailto:tullejohn62@gmail.com" method="post" enctype="text/plain">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
-          
+
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
 
           <label for="address">Address:</label>
           <input type="text" id="address" name="address" placeholder="Enter your address" required>
-          
+
           <label for="phone">Phone:</label>
           <input type="tel" id="phone" name="phone" required>
-          
+
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
+
           <button type="submit">Send</button>
-            </form>
-        </div>
+        </form>
       </div>
     </div>
-        </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
