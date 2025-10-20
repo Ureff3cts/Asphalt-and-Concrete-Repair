@@ -1,0 +1,799 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: hwb(0 92% 5%);
+  color: #f5efef;
+  font-family: Georgia, serif;
+}
+
+a {
+  color: #fdfcfc;
+  text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #D41E1E;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #161616;
+  border-bottom: 2px solid #D41E1E;
+  padding: 10px 0;
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #888585;
+  background-image: url('images/Backgrounds/new background 3.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #e0f805;
+}
+
+.hero-container h1 {
+  font-size: 52px;
+  margin-bottom: 50px;
+  text-shadow: 3px 3px 0 #e7d104, 3px 3px 0 #f00303, 3px 3px 0 #faf605, 8px 8px 0 #f10505;
+}
+
+.hero-container p {
+  font-size: 32px;
+}
+
+/* Services Section */
+#services {
+    background-image: url('images/Backgrounds/new background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 28px;
+}
+
+#services h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fd0404;
+    text-shadow: #fdfcfc 4px 4px 0, #fdfcfc 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+    font-size: 48px;
+}
+
+.service,
+.service-item {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #f3f1f1;
+    border-radius: 5px;
+    background-image: url('images/Backgrounds/new background 2.jpg');
+    transition: transform 0.3s ease;
+}
+
+.service:hover,
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service h3,
+.service-item h3 {
+    margin-bottom: 10px;
+    color: #eeeeee;
+    font-size: 32px;
+}
+.service h4,
+.service-item h4 {
+   text-align: center;
+    margin-bottom: 40px;
+    color: #fd0404;
+    text-shadow: #fdfcfc 4px 4px 0, #fdfcfc 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+    font-size: 38px;
+}
+
+.service p,
+.service-item p {
+    font-size: 24px;
+    max-width: 800px;
+    margin: 0 auto 15px;
+    color: #faf8f8;
+}
+.text-large h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+/* Gallery Preview Section */
+#gallery-preview {
+  padding: 40px 20px;
+  background: #858484;
+}
+
+#gallery-preview h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color-scheme: gradient;
+  font-size: 36px;
+  text-shadow: #181818 4px 4px 0, #111111 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+  text-decoration-color: #D41E1E;
+}
+#gallery-preview h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #faf8f8;
+}
+
+.gallery-preview {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.preview-carousel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  resize: both;
+  max-width: 45%;
+  max-height: 45;
+}
+
+.preview-carousel img {
+  width: 100%;
+  display: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+}
+
+.preview-carousel img.active {
+  display: block;
+  
+}
+
+.carousel-controls {
+  margin-top: 10px;
+}
+
+.carousel-controls button {
+  background: #D41E1E;
+  border: none;
+  color: #fdfcfc;
+  padding: 16px 18px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.carousel-controls button:hover {
+  opacity: 0.8;
+  color: #ffbc03;
+}
+
+/* Contact Section */
+#contact {
+  padding: 40px 20px;
+  background: #9c9c9c;
+}
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #D41E1E;
+  font-size: 36px;
+  text-shadow: #181818 4px 4px 0, #111111 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+}
+#contact h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fcf6f6;
+  font-size: 38px;
+  text-shadow: 4px 4px 0 #181818, 4px 4px 0 #111111, 6px 6px 0 #ffbc03, 8px 8px 0 #ffbc03;
+}
+
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #7e7d7d;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contact-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f7f4f4;
+  font-size: 32px;
+}
+.contact-card p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #faf8f8;
+}
+.contact-card button {
+  background: #D41E1E;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: Georgia, serif;
+}
+.contact-card button:hover {
+  opacity: 0.8;
+}
+.contact-card a {
+  color: #faf4f4;
+  text-decoration: none;
+}
+.contact-card a:hover {
+  text-decoration: underline;
+}
+.contact-card a:visited {
+  color: #fdfdfd;
+}
+.contact-card a:active {
+  color: #e9e6e6;
+}
+.contact-card a:focus {
+  outline: none;
+}
+.contact-card a:focus-visible {
+  outline: 2px solid #f1ebeb;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:hover {
+  outline: 2px solid #f8f4f4;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:active {
+  outline: 2px solid #e7e5e5;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:visited {
+  outline: 2px solid #ebe7e7;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:visited:hover {
+  outline: 2px solid #ebe7e7;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:visited:active {
+  outline: 2px solid #f0eded;
+  outline-offset: 2px;
+}
+.contact-card a:focus-visible:visited:focus {
+  outline: 2px solid #ecebeb;
+  outline-offset: 2px;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #faf8f8;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+.contact-card form label {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #f5f2f2;
+}
+.contact-card form input,
+.contact-card form textarea,
+.contact-card form select {
+  padding: 10px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #faf8f8;
+  background-color: #444;
+}
+.contact-card form input[type="text"],
+.contact-card form input[type="phone"],
+.contact-card form input[type="email"],
+.contact-card form input[type="tel"],
+.contact-card form input[type="url"],
+.contact-card form input[type="number"],
+.contact-card form input[type="date"],
+.contact-card form input[type="time"],
+.contact-card form input[type="datetime-local"],
+.contact-card form input[type="month"],
+.contact-card form input[type="week"],  
+.contact-card form input[type="search"],
+.contact-card form input[type="color"],
+.contact-card form input[type="range"],
+.contact-card form input[type="checkbox"],
+.contact-card form input[type="radio"],
+.contact-card form input[type="file"],
+.contact-card form input[type="password"],
+.contact-card form input[type="hidden"],
+.contact-card form input[type="button"],
+.contact-card form input[type="submit"],
+.contact-card form input[type="reset"],
+.contact-card form input[type="image"],
+.contact-card form input[type="submit"],
+.contact-card form input[type="reset"],
+.contact-card form input[type="image"] {
+  font-size: 24px;
+  color: #faf8f8;
+  background-color: #444;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #3d3d3d;
+  border-top: 2px solid #D41E1E;
+ 
+}
+
+/* Footer Icon Styling */
+.footer-icon {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-icon img {
+
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* Our Work Page Styles */
+.carousel-section {
+  padding: 40px 20px;
+  background: #707070;
+  text-align: center;
+}
+#asphaltCarousel {
+  width: 100%; /* Adjust as needed */
+  max-width: 800px; /* Keeps it responsive */
+  margin: auto; /* Centers the carousel */
+  overflow: hidden; /* Hides overflowing content */
+}
+
+.carousel {
+  display: flex; /* Enables horizontal scrolling */
+  justify-content: center; /* Centers carousel items */
+  align-items: center; /* Aligns items vertically */
+}
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel-controls {
+  margin-top: 10px;
+}
+
+.active.img-medium.clickable-image {
+  width: 100%; /* Adjust this percentage as needed */
+  max-width: 700px; /* Ensures it doesn't exceed a certain width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+
+.gallery-contact button {
+  background: #D41E1E;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: Georgia, serif;
+  font-size: large;
+}
+
+.gallery-contact button:hover,
+.carousel-controls button:hover {
+  opacity: 0.8;
+}
+.carousel-controls button {
+  background: #D41E1E;
+  border: none;
+  color: #fdfcfc;
+  padding: 16px 18px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  border-radius: 5px;
+}
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+ font-size: 28px;
+}
+
+/* Contact modal adjustments */
+#contactModal .modal-content {
+  padding: 30px;
+}
+
+#contactModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 2.5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e65c00;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f70505;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+/* Video Container - ensuring 16:9 aspect ratio */
+/* Flex container to center video vertically and horizontally */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: transparent; /* Reduced/removed background */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+/* Pause Button Styling */
+#pauseButton {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#video-content {
+  padding: 40px 20px;
+  background: #837b7b;
+}
+
+.video-content {
+  margin-bottom: 20px;
+}
+
+.video-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #D41E1E;
+  font-size: 36px;
+  text-shadow: #181818 4px 4px 0, #111111 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+}
+.video-content h2 {
+  margin-bottom: 5px;
+  color: #eeecec;
+  font-size: 34px;
+  color: #f80404;
+  text-shadow: 
+    -1px -1px 0 #000, 
+     1px -1px 0 #000, 
+    -1px  1px 0 #000, 
+     1px  1px 0 #000, 
+     #181818 2px 2px 0, 
+     #111111 2px 2px 0, 
+     #ffbc03 6px 6px 0, 
+     #ffbc03 8px 8px 0;
+}
+.video-content p {
+  margin-bottom: 5px;
+  color: #eee9e9;
+  font-size: 20px;
+  color: #fdfcfc;
+}
+.video-content h3 {
+  margin-bottom: 5px;
+  color: #f7f5f5;
+  font-size: 34px;
+}
+
+.video-content p {
+  text-align: center;
+  font-size: 20px;
+  color: #fffcf9;
+}
+
+
+/* Contact Card Styling */
+.contact-card {
+  background-color: #444;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  max-width: 400px; /* Reduced width */
+  text-align: center;
+  font-size: 24px;
+  color: #faf8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card.full {
+  max-width: 400px; /* Reduced width */
+  margin: 0 auto;
+  background: #868585;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #faf8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the body and text with white color, and add size to bold text and body of this section */
+#galleries-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px; /* Adjust body font size */
+}
+
+/* Bold text styling with Georgia font, white color, red & yellow shadows, black outline, and size */
+#galleries-section strong {
+  font-family: Georgia, serif;
+  color: #0a0a0a;
+  text-shadow: 
+    -1px -1px 0 #f5f1f1,
+     1px -1px 0 #f5f1f1,
+    -1px  1px 0 #f5f1f1,
+     1px  1px 0 #f5f1f1,
+     2px  2px 0 red,
+    -2px -2px 0 yellow;
+  font-size: 24px; /* Adjust bold text size */
+}
+/* Resources Page Styles */
+.contact-card.full {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #868585;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #faf8f8;
+}
+
+.contact-card.full form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card.full label {
+  margin-top: 10px;
+}
+
+.contact-card.full input,
+.contact-card.full textarea,
+.contact-card.full select {
+  padding: 8px;
+  border: none;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+#faq-diy {
+  padding: 40px 20px;
+  background: #837b7b;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h2 {
+  margin-bottom: 5px;
+  color: #eeecec;
+  font-size: 34px;
+  color: #fdfcfc;
+}
+.faq-item p {
+  margin-bottom: 5px;
+  color: #eee9e9;
+  font-size: 20px;
+  color: #fdfcfc;
+}
+.faq-item h3 {
+  margin-bottom: 5px;
+  color: #f7f5f5;
+  font-size: 34px;
+}
+
+
+.faq-item p {
+  text-align: center;
+  font-size: 20px;
+  color: #fffcf9;
+}
+/* Utility Classes for Text Sizing */
+.text-small {
+  font-size: 24px;
+  color: #fd0404;
+}
+
+.text-medium {
+  font-size: 32px;
+  text-align: center;
+  color: #fdfcfc;
+}
+
+.text-large {
+  font-size: 38px;
+  text-align: center;
+  color: #fdfcfc;
+  text-shadow: #fa0606 4px 4px 0, #f80303 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
+}
+
+.text-large h2 {
+  font-size: 38px;
+  text-align: center;
+  color: #fdfcfc;
+  text-shadow: #fa0606 4px 4px 0, #f80303 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;  
+}
+/* Utility Classes for Image Sizing */
+.img-small {
+  width: 100px;
+  height: auto;
+}
+
+.img-medium {
+  width: 100px;
+  height: auto;
+}
+
+.img-large {
+  width: 200px;
+  height: auto;
+}
