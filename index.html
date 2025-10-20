@@ -960,7 +960,7 @@ p {
                         <p>Proudly Serving Central Florida and Surrounding Areas</p>
 
                         <div class="contact-form">
-                                <form id="contactForm" action="mailto:tullejohn62@gmail.com" method="post" enctype="text/plain">
+                                <form id="contactForm" action="contact-handler.php" method="post">
                                         <label for="name">Name:</label>
                                         <input type="text" id="name" name="name" autocomplete="name" required>
 
@@ -1015,6 +1015,43 @@ document.addEventListener('DOMContentLoaded', function() {
     if (star) {
         observer.observe(star);
     }
+});
+
+// Contact form submission handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    
+    // Show loading state
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    fetch('contact-handler.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Show success/error message
+        alert(data);
+        
+        // Reset form if successful
+        if (data.includes('Thank you')) {
+            this.reset();
+        }
+    })
+    .catch(error => {
+        alert('Sorry, there was a problem sending your message. Please try again later.');
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    });
 });
 </script>
 
