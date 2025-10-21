@@ -86,23 +86,36 @@ a {
         font-size: 32px;
     }
 
-#nav-ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        font-size: 32px;
-    }
+nav {
+  background-color: #333;       /* dark background */
+  width: 100%;                  /* full width */
+}
 
-#nav-ul-li {
-        margin: 0 10px;
-    }
+nav ul {
+  display: flex;                /* make items line up horizontally */
+  justify-content: space-around;/* spread items evenly across */
+  list-style: none;             /* remove bullets */
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+}
 
-#nav-ul-li-a {
-        font-size: 24px;
-        font-weight: bold;
-    }
+nav li {
+  flex: 1;                      /* each item takes equal space */
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #555;       /* hover effect */
+}
+
 
 /* Hero Section */
 .hero-container {
@@ -113,76 +126,77 @@ a {
     }
 
 .hero-container-h1 {
-        font-size: 52px;
-        margin-bottom: 40px;
-        color: #6e0202;
-    }
+ font-size: 52px;
+ margin-bottom: 40px;
+ color: #6e0202;
+}
 
 .hero-container-p {
-        font-size: 20px;
-    }
+ font-size: 20px;
+}
 
 /* Services Section */
 #services {
-        background-color: rgb(151, 149, 149);
-        padding: 30px 10px;
-        font-size: 52px;
-    }
+ background-color: rgb(151, 149, 149);
+ padding: 30px 10px;
+ font-size: 52px;
+ 
+}
 .services-h1 {
-        text-align: center;
-        margin-bottom: 10px;
-        color: #790202;
-        font-size: 64px;
-        
-    }
+ text-align: center;
+ margin-bottom: 10px;
+ color: #790202;
+ font-size: 64px;
+}
 
 #services-h5 {
-        text-align: center;
-        margin-bottom: 30x;
-        color: #790202;
-        font-size: 54px;
-    }
+ text-align: center;
+ margin-bottom: 30px;
+ color: #790202;
+ font-size: 54px;
+}
 
 .service,
 .service-item {
-        text-align: center;
-        margin-bottom: 15px;
-        padding: 15px;
-        border: 2px solid #9c0707;
-        border-radius: 5px;
-        background-color: rgb(151, 149, 149);
-        transition: transform 0.3s ease;
-    }
+ text-align: center;
+ margin-bottom: 15px;
+ padding: 15px;
+ border: 2px solid #9c0707;
+ border-radius: 5px;
+ background-color: rgb(151, 149, 149);
+ transition: transform 0.3s ease;
+}
 
 .service-h3,
 .service-item-h3 {
-        margin-bottom: 10px;
-        color: #700202;
-        font-size: 38px;
-    }
+ margin-bottom: 10px;
+ color: #700202;
+ font-size: 38px;
+}
 
 .service-h4,
 .service-item-h3 {
-        text-align: center;
-        margin-bottom: 30px;
-        color: #6e0303;
-        font-size: 38px;
-    }
+ text-align: center;
+ margin-bottom: 30px;
+ color: #6e0303;
+ font-size: 38px;
+}
 
 .service-p,
 .service-item-p {
-        font-size: 24px;
-        max-width: 800px;
-        margin: 0 auto 15px;
-        color: #111010;
-    }
+ font-size: 24px;
+ max-width: 800px;
+ margin: 0 auto 15px;
+ color: #111010;
+}
+
 
 .service-h5,
 .concrete-resurfacing-h5 {
-        text-align: center;
-        margin-bottom: 15px;
-        color: #700202;
-        font-size: 38px;
+ text-align: center;
+ margin-bottom: 15px;
+ color: #700202;
+ font-size: 38px;
     }
 
 .service-concrete-resurfacing {
@@ -192,10 +206,10 @@ a {
  font-size: 38px;
 }
 .concrete-resurfacing-item p {
-        font-size: 32px;
-        max-width: 800px;
-        margin-bottom: 15px;
-        color: #970505;
+ font-size: 32px;
+ max-width: 800px;
+ margin-bottom: 15px;
+ color: #970505;
 }
 
 .text-large h5 {
@@ -292,228 +306,9 @@ a {
         }
 }
 
-/* Contact Form */
-.form,
-#full-contact-form {
- max-width: 400px;
- margin: 1em auto;
- font-family: 'Georgia', serif;
- text-align: center;
- padding: 20px;
-}
 
-#full-contact {
- text-align: center;
- padding: 40px 20px;
-}
 
-#full-contact form label {
- display: block;
- margin-bottom: 0.5em;
- font-size: 24px;
- text-align: left;
- max-width: 400px;
- margin-left: auto;
- margin-right: auto;
-}
 
-#full-contact form input,
-#full-contact form textarea {
- width: 100%;
- padding: 0.8em;
- border: 1px solid #ece904;
- border-radius: 4px;
- box-sizing: border-box;
- margin: 0.25em auto 0.5em auto;
- font-size: 24px;
-}
-
-#full-contact form textarea {
- height: 100px;
-}
-
-#full-contact form button {
- display: block;
- padding: 1.25em 1.75em;
- border: none;
- background-color: #750606;
- color: #ffffff;
- border-color: #680303;
- border-radius: 2px;
- cursor: pointer;
- margin: 0.5em auto;
- font-size: 28px;
- font-weight: bold;
- width: 100%;
- max-width: 200px;
- min-height: 60px;
-}
-
-#full-contact form button:hover {
- background-color: #fcd603;
- color: #000000;
- top: -100px;
-}
-#contact {
-  padding: 40px 20px;
-  background: #9c9c9c;
-}
-#contact h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #D41E1E;
-  font-size: 36px;
-  text-shadow: #181818 4px 4px 0, #111111 4px 4px 0, #ffbc03 6px 6px 0, #ffbc03 8px 8px 0;
-}
-#contact h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #fcf6f6;
-  font-size: 38px;
-  text-shadow: 4px 4px 0 #181818, 4px 4px 0 #111111, 6px 6px 0 #ffbc03, 8px 8px 0 #ffbc03;
-}
-
-.contact-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #7e7d7d;
-  padding: 20px;
-  border-radius: 5px;
-  border: 3px solid #D41E1E;
-}
-
-.contact-card h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f7f4f4;
-  font-size: 32px;
-}
-.contact-card p {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #faf8f8;
-  border: 2px solid #D41E1E;
-  padding: 10px;
-  border-radius: 3px;
-}
-.contact-card button {
-  background: #D41E1E;
-  border: none;
-  color: #fff;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-family: Georgia, serif;
-}
-.contact-card button:hover {
-  opacity: 0.8;
-}
-.contact-card a {
-  color: #faf4f4;
-  text-decoration: none;
-}
-.contact-card a:hover {
-  text-decoration: underline;
-}
-.contact-card a:visited {
-  color: #fdfdfd;
-}
-.contact-card a:active {
-  color: #e9e6e6;
-}
-.contact-card a:focus {
-  outline: none;
-}
-.contact-card a:focus-visible {
-  outline: 2px solid #f1ebeb;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:hover {
-  outline: 2px solid #f8f4f4;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:active {
-  outline: 2px solid #e7e5e5;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:visited {
-  outline: 2px solid #ebe7e7;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:visited:hover {
-  outline: 2px solid #ebe7e7;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:visited:active {
-  outline: 2px solid #f0eded;
-  outline-offset: 2px;
-}
-.contact-card a:focus-visible:visited:focus {
-  outline: 2px solid #ecebeb;
-  outline-offset: 2px;
-}
-
-.contact-card form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #faf8f8;
-  font-family: Georgia, serif;
-  text-align: center;
-}
-.contact-card form label {
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: #f5f2f2;
-}
-.contact-card form input,
-.contact-card form textarea,
-.contact-card form select {
-  padding: 10px;
-  border: none;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  font-size: 24px;
-color: #faf8f8;
-display: flex;
-align-items: center;
-justify-content: center;
-  background-color: #444;
-}
-.contact-card form input[type="text"],
-.contact-card form input[type="phone"],
-.contact-card form input[type="email"],
-.contact-card form input[type="tel"],
-.contact-card form input[type="url"],
-.contact-card form input[type="number"],
-.contact-card form input[type="date"],
-.contact-card form input[type="time"],
-.contact-card form input[type="datetime-local"],
-.contact-card form input[type="month"],
-.contact-card form input[type="week"],  
-.contact-card form input[type="search"],
-.contact-card form input[type="color"],
-.contact-card form input[type="range"],
-.contact-card form input[type="checkbox"],
-.contact-card form input[type="radio"],
-.contact-card form input[type="file"],
-.contact-card form input[type="password"],
-.contact-card form input[type="hidden"],
-.contact-card form input[type="button"],
-.contact-card form input[type="submit"],
-.contact-card form input[type="reset"],
-.contact-card form input[type="image"],
-.contact-card form input[type="submit"],
-.contact-card form input[type="reset"],
-.contact-card form input[type="image"] {
-  font-size: 24px;
-  color: #faf8f8;
-  background-color: #444;
-}
-
-/* Footer */
 /* Footer */
 footer {
   text-align: center;
@@ -558,12 +353,12 @@ footer {
  color: #b40505;
 }
 
-h5 {
+.h5 {
  font-size: 42px;
  text-align: center;
  color: #850505;
 }
-p {
+.p {
  font-size: 24px;
  color: #0a0a0a;
  text-align: center;
@@ -693,6 +488,89 @@ p {
         border: 1px solid #000;
         object-fit: cover;
 }
+/* Contact Section Wrapper */
+.contact-section {
+  margin: 2rem auto;
+  max-width: 700px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Heading and note */
+.contact-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-section .note {
+  background: #a4a5a7;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* Form grid */
+.contact-section .contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Labels */
+.contact-section .contact-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs, textarea, button */
+.contact-section .contact-form input,
+.contact-section .contact-form textarea,
+.contact-section .contact-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-section .contact-form input,
+.contact-section .contact-form textarea {
+  border: 1px solid #ed0a0a;
+  border-radius: 6px;
+}
+
+/* Button styling */
+.contact-section .contact-form button {
+  background: #a4a4a6;
+  color: #ec0909;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.contact-section .contact-form button:hover {
+  background: #bcbdbf;
+}
+
+/* Help text */
+.contact-section .contact-form .help {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Status messages */
+.contact-section .contact-form .status {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-section .contact-form .status.error {
+  color: #b00020;
+}
+
+.contact-section .contact-form .status.success {
+  color: #7b0a0a;
+}
+
 </style>
 </head>
 <body>
@@ -836,7 +714,7 @@ p {
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
             <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -944,43 +822,85 @@ p {
                     </div>
             </div>
     </section>
-  
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <p class="note"><strong>Email:</strong> info@tjsasphaltandconcreterepair.com</p>
 
-
-<!-- Contact Section -->
-<section id="contact">
-  <h1 class="text-large">Contact Us</h1>
-  <div class="contact-card">
-    <div class="business-info">
-      <h3 class="text-medium">TJ's Asphalt &amp; Concrete Repair</h3>
-      <p>Phone: <a href="tel:+13528307407">(352) 830-7407</a></p>
-      <p>Email: <a href="mailto:info@tjsasphaltandconcreterepair.com">info@tjsasphaltandconcreterepair.com</a></p>
-      <p>Proudly Serving Central Florida and Surrounding Areas</p>
-
-      <div class="contact-form">
-        <!-- Send to PHP script instead of mailto -->
-        <form id="contactForm" action="contact-handler.php" method="post">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address" placeholder="Enter your address" autocomplete="street-address" required>
-
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\+\(\)]{7,}" required>
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send</button>
-        </form>
-      </div>
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/yourFormID"
+    method="POST"
+  >
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required maxlength="100" />
     </div>
-  </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="_replyto" type="email" required maxlength="254" />
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <!-- Honeypot field to catch bots -->
+    <input type="text" name="_gotcha" style="display:none" />
+
+    <!-- Optional: redirect after success -->
+    <input type="hidden" name="_next" value="https://tjsasphaltandconcreterepair.com/thank-you.html" />
+
+    <button type="submit">Send</button>
+  </form>
 </section>
+
+
+<!-- reCAPTCHA and form script -->
+<script src="https://www.google.com/recaptcha/api.js?render=RECAPTCHA_SITE_KEY"></script>
+<script>
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('status');
+
+  function setStatus(msg, type='') {
+    statusEl.textContent = msg;
+    statusEl.className = `status ${type}`;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('Submitting…');
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      setStatus('Please fill out name, email, and message.', 'error');
+      return;
+    }
+
+    try {
+      const token = await grecaptcha.execute('RECAPTCHA_SITE_KEY', { action: 'contact' });
+
+      const resp = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, message, token })
+      });
+
+      const data = await resp.json();
+      if (!resp.ok) {
+        setStatus(data.error || 'Something went wrong. Please try again.', 'error');
+        return;
+      }
+      setStatus('Thanks! Your message has been sent.', 'success');
+      form.reset();
+    } catch (err) {
+      setStatus('Network or server error. Please try again.', 'error');
+    }
+  });
+</script>
 
   <!-- Footer -->
   <footer>
