@@ -771,12 +771,17 @@ document.addEventListener('DOMContentLoaded', () => {
     <form class="contact-card__form" method="POST" action="#" novalidate autocomplete="on" aria-describedby="contact-hint">
         <div class="contact-card__field">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" autocapitalize="words" placeholder="Your name" enterkeyhint="next" aria-required="true">
-            <input id="address" name="address" type="text" style="display:none;" autocomplete="address-level1">
-            <input id="city" name="city" type="text" style="display:none;" autocomplete="address-level2">
-            <input id="zip" name="zip" type="text" style="display:none;" autocomplete="postal-code">
-            <input id="phone-number" name="phone-number" type="text" style="display:none;" autocomplete="tel">
-            <input id="message" name="message" type="text" style="display:none;" autocomplete="off">
+            <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" autocapitalize="words" placeholder="Your name" enterkeyhint="next">
+        </div>
+
+        <div class="contact-card__field">
+            <label for="fromEmail">Email</label>
+            <input id="fromEmail" name="fromEmail" type="email" required maxlength="120" autocomplete="email" inputmode="email" placeholder="you@example.com" enterkeyhint="next">
+        </div>
+
+        <div class="contact-card__field contact-card__fullrow">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required minlength="10" maxlength="2000" placeholder="How can we help?" enterkeyhint="send"></textarea>
         </div>
 
         <p id="contact-hint" class="text-small contact-card__hint">We never share your information.</p>
