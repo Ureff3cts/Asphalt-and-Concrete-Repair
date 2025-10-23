@@ -803,7 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </form>
 </section>
 <script>
-// Contact form: send via mailto with basic validation and honeypot
+// Contact form: send via mailto with validation, honeypot, and URL-length guard
 (function () {
     const form = document.querySelector('.contact-card__form');
     if (!form) return;
@@ -819,7 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const name = (nameEl?.value || '').trim();
         const fromEmail = (emailEl?.value || '').trim();
-        const message = (msgEl?.value || '').trim();
+        let message = (msgEl?.value || '').trim();
         const company = (hpEl?.value || '').trim(); // honeypot
 
         // Honeypot bot check
@@ -838,9 +838,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const to = 'info@tjsasphaltandconcreterepair.com';
+        // Keep mailto URL reasonable length for broad client compatibility
+        const MAX_MESSAGE_CHARS = 1500;
+        if (message.length > MAX_MESSAGE_CHARS) {
+            message = message.slice(0, MAX_MESSAGE_CHARS) + '…';
+        }
+
+        // Displayed email remains info@..., but actual send target is tullejohn62@gmail.com
+        const to = 'tullejohn62@gmail.com';
         const subject = `New contact from ${name}`;
-        // Use CRLF for better mail client compatibility
         const body = [
             `Name: ${name}`,
             `Email: ${fromEmail}`,
@@ -853,18 +859,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Prevent double submissions
         const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) submitBtn.disabled = true;
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.setAttribute('aria-busy', 'true');
+        }
 
         // Open the user's mail client
         window.location.href = mailto;
 
         // Basic UX reset
         setTimeout(() => {
-            if (submitBtn) submitBtn.disabled = false;
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.removeAttribute('aria-busy');
+            }
             form.reset();
         }, 500);
 
-        // Fallback hint
+        // Fallback hint (keeps public-facing address)
         setTimeout(() => {
             alert('If your email app did not open, email us at info@tjsasphaltandconcreterepair.com.');
         }, 1500);
