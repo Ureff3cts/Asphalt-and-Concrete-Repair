@@ -396,12 +396,13 @@
         .before-after-container .gallery-item {
             margin: 5px 0; width: 100%; text-align: center; font-size: 18px; position: relative;
         }
-        .before-after-container .gallery-item:first-child::before {
+        /* Show labels only when attributes exist (avoids duplicates on single items) */
+        .before-after-container .gallery-item[data-before]::before {
             content: attr(data-before);
             display: block; text-align: center; margin-bottom: 8px;
             font-weight: 700; color: #ff3b3b; font-size: 18px;
         }
-        .before-after-container .gallery-item:last-child::after {
+        .before-after-container .gallery-item[data-after]::after {
             content: attr(data-after);
             display: block; text-align: center; margin-top: 8px;
             font-weight: 700; color: #ff3b3b; font-size: 18px;
@@ -482,6 +483,11 @@
         }
         .contact-card__fullrow {
             grid-column: 1 / -1;
+        }
+        .contact-card__iframe {
+            width: 100%;
+            border: 0;
+            display: block;
         }
 
         /* Honeypot hidden */
@@ -749,140 +755,96 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </section>
-<!-- Contact Card -->
-<section id="contact" class="contact-card" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="contact-card__title">Get in Touch</h2>
+<!-- Contact Section -->
+<section id="contact" aria-labelledby="contact-title">
+    <div class="contact-card">
+        <h2 id="contact-title" class="contact-card__title">Contact Us</h2>
 
-    <!-- Public-facing contact info -->
-    <div class="contact-card__info">
-        <p class="contact-card__label">Email</p>
-        <p class="contact-card__value">
-            <a href="mailto:info@tjsasphaltandconcreterepair.com" class="contact-card__email">
-                info@tjsasphaltandconcreterepair.com
-            </a>
-        </p>
-        <p class="contact-card__label">Phone</p>
-        <p class="contact-card__value">
-            <a href="tel:+18635133291" class="contact-card__email">(863)&nbsp;513&#8209;3291</a>
+        <section class="contact-card__fullrow" aria-label="Newsletter signup">
+            <iframe
+                class="contact-card__iframe"
+                data-tally-src="https://tally.so/embed/wa8WXv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                title="Newsletter signup"
+                loading="lazy"
+                height="216"
+            ></iframe>
+        </section>
+
+        <p class="contact-card__hint">
+            Prefer email? <a class="contact-card__email" href="mailto:info@tjsasphaltandconcreterepair.com">info@tjsasphaltandconcreterepair.com</a>
         </p>
     </div>
-
-    <!-- Form handled client-side (mailto via JS) -->
-    <form class="contact-card__form" method="POST" action="#" novalidate autocomplete="on" aria-describedby="contact-hint">
-        <div class="contact-card__field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" autocapitalize="words" placeholder="Your name" enterkeyhint="next">
-        </div>
-
-        <div class="contact-card__field">
-            <label for="fromEmail">Email</label>
-            <input id="fromEmail" name="fromEmail" type="email" required maxlength="120" autocomplete="email" inputmode="email" placeholder="you@example.com" enterkeyhint="next">
-        </div>
-
-        <div class="contact-card__field contact-card__fullrow">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required minlength="10" maxlength="2000" placeholder="How can we help?" enterkeyhint="send"></textarea>
-        </div>
-
-        <p id="contact-hint" class="text-small contact-card__hint">We never share your information.</p>
-
-        <!-- Honeypot anti-spam -->
-        <div class="contact-card__hp" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
-        </div>
-
-        <button type="submit" class="contact-card__button">Send Message</button>
-
-        <noscript>
-            <p class="text-small contact-card__fullrow">
-                JavaScript is required to submit the form. Email us directly at
-                <a href="mailto:tullejohn62@gmail.com">info@tjsasphaltandconcreterepair.com</a>.
-            </p>
-        </noscript>
-    </form>
 </section>
+
 <script>
-// Contact form: send via mailto with validation, honeypot, and URL-length guard
-(function () {
-    const form = document.querySelector('.contact-card__form');
-    if (!form) return;
-
-    const emailEl = document.getElementById('fromEmail');
-    const nameEl = document.getElementById('name');
-    const msgEl = document.getElementById('message');
-    const hpEl = document.getElementById('company');
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const name = (nameEl?.value || '').trim();
-        const fromEmail = (emailEl?.value || '').trim();
-        let message = (msgEl?.value || '').trim();
-        const company = (hpEl?.value || '').trim(); // honeypot
-
-        // Honeypot bot check
-        if (company) {
-            form.reset();
-            return;
-        }
-
-        // Use native validation + simple email check
-        emailEl?.setCustomValidity('');
-        if (!emailRe.test(fromEmail)) {
-            emailEl?.setCustomValidity('Enter a valid email address.');
-        }
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-
-        // Keep mailto URL reasonable length for broad client compatibility
-        const MAX_MESSAGE_CHARS = 1500;
-        if (message.length > MAX_MESSAGE_CHARS) {
-            message = message.slice(0, MAX_MESSAGE_CHARS) + '…';
-        }
-
-        // Displayed email remains info@..., but actual send target is tullejohn62@gmail.com
-        const to = 'tullejohn62@gmail.com';
-        const subject = `New contact from ${name}`;
-        const body = [
-            `Name: ${name}`,
-            `Email: ${fromEmail}`,
-            '',
-            'Message:',
-            message
-        ].join('\r\n');
-
-        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Prevent double submissions
-        const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.setAttribute('aria-busy', 'true');
-        }
-
-        // Open the user's mail client
-        window.location.href = mailto;
-
-        // Basic UX reset
-        setTimeout(() => {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.removeAttribute('aria-busy');
+    // Handle Tally postMessage events safely
+    (function () {
+        function parseMessage(data) {
+            if (!data) return {};
+            if (typeof data === 'string') {
+                try {
+                    if (data.trim().startsWith('{')) return JSON.parse(data);
+                    return { event: data };
+                } catch (_) {
+                    return { event: data };
+                }
             }
-            form.reset();
-        }, 500);
+            return data;
+        }
 
-        // Fallback hint (keeps public-facing address)
-        setTimeout(() => {
-            alert('If your email app did not open, email us at info@tjsasphaltandconcreterepair.com.');
-        }, 1500);
-    });
-})();
+        var allowedOrigin = 'https://tally.so';
+        var tallyFrames = Array.prototype.slice.call(
+            document.querySelectorAll('iframe[data-tally-src]')
+        ).map(function (f) { return f.contentWindow; });
+
+        window.addEventListener('message', function (e) {
+            if (e.origin !== allowedOrigin) return;
+            if (tallyFrames.length && tallyFrames.indexOf(e.source) === -1) return;
+
+            var msg = parseMessage(e.data);
+            switch (msg.event) {
+                case 'Tally.FormLoaded':
+                    break;
+                case 'Tally.FormSubmitted':
+                    break;
+                default:
+                    break;
+            }
+        });
+    })();
 </script>
+
+<script>
+    // Lightweight loader with fallback if the widget script fails
+    (function () {
+        var d = document, w = "https://tally.so/widgets/embed.js";
+        function init() {
+            if (typeof Tally !== "undefined") {
+                Tally.loadEmbeds();
+            } else {
+                d.querySelectorAll("iframe[data-tally-src]:not([src])")
+                 .forEach(function (e) { e.src = e.dataset.tallySrc; });
+            }
+        }
+        if (typeof Tally !== "undefined") {
+            init();
+        } else if (!d.querySelector('script[src="' + w + '"]')) {
+            var s = d.createElement("script");
+            s.src = w;
+            s.onload = init;
+            s.onerror = init;
+            d.body.appendChild(s);
+        }
+    })();
+</script>
+
+<noscript>
+    <p class="contact-card__hint">
+        JavaScript is required to load the contact form. Email us at
+        <a class="contact-card__email" href="mailto:info@tjsasphaltandconcreterepair.com">info@tjsasphaltandconcreterepair.com</a>.
+    </p>
+</noscript>
+
 
 <!-- Footer -->
 <footer aria-label="Site footer">
