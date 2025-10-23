@@ -772,6 +772,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="contact-card__field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" autocapitalize="words" placeholder="Your name" enterkeyhint="next" aria-required="true">
+            <input id="address" name="address" type="text" style="display:none;" autocomplete="address-level1">
+            <input id="city" name="city" type="text" style="display:none;" autocomplete="address-level2">
+            <input id="zip" name="zip" type="text" style="display:none;" autocomplete="postal-code">
+            <input id="phone-number" name="phone-number" type="text" style="display:none;" autocomplete="tel">
+            <input id="message" name="message" type="text" style="display:none;" autocomplete="off">
         </div>
 
         <p id="contact-hint" class="text-small contact-card__hint">We never share your information.</p>
